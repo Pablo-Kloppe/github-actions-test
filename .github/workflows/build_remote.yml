@@ -1,0 +1,42 @@
+name: Build COBOL Remotely
+
+on:
+  workflow_dispatch:
+    inputs:
+      program_name:
+        description: 'Nombre del programa COBOL (sin .cbl)'
+        required: true
+        default: 'AC1C0ROS'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Instalar SSH key
+      run: |
+        $KeyPath = "$env:USERPROFILE\.ssh\id_rsa"
+        New-Item -ItemType Directory -Path "$env:USERPROFILE\.ssh" -Force | Out-Null
+        [System.IO.File]::WriteAllText($KeyPath, "${{ secrets.SSH_PRIVATE_KEY }}")
+        icacls $KeyPath /inheritance:r
+        icacls $KeyPath /grant:r "$env:USERNAME:F"
+        ssh-keyscan ${{ secrets.BUILD_SERVER }} >> "$env:USERPROFILE\.ssh\known_hosts"
+      shell: powershell
+
+    - name: Ejecutar build remoto
+      run: |
+        $Program = "${{ github.event.inputs.program_name }}"
+        .\build_remote.ps1 -ProgramName $Program `
+            -BuildServer "${{ secrets.BUILD_USER }}@${{ secrets.BUILD_SERVER }}" `
+            -Environment "DV"
+      shell: powershell
+
+    - name: Publicar artefactos generados
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: compiled-files
+        path: compiled/
