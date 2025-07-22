@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Ejecutar build remoto
+      working-directory: build
       run: |
         $Program = "${{ github.event.inputs.program_name }}"
         .\build\build_remote.ps1 -ProgramName $Program `
