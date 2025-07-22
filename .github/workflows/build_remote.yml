@@ -16,16 +16,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Instalar SSH key
-      run: |
-        $KeyPath = "$env:USERPROFILE\.ssh\id_rsa"
-        New-Item -ItemType Directory -Path "$env:USERPROFILE\.ssh" -Force | Out-Null
-        [System.IO.File]::WriteAllText($KeyPath, "${{ secrets.SSH_PRIVATE_KEY }}")
-        icacls $KeyPath /inheritance:r
-        icacls $KeyPath /grant:r "$env:USERNAME:F"
-        ssh-keyscan ${{ secrets.BUILD_SERVER }} >> "$env:USERPROFILE\.ssh\known_hosts"
-      shell: powershell
-
     - name: Ejecutar build remoto
       run: |
         $Program = "${{ github.event.inputs.program_name }}"
