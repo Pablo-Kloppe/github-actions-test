@@ -20,7 +20,7 @@ jobs:
       working-directory: build
       run: |
         $Program = "${{ github.event.inputs.program_name }}"
-        .\build\build_remote.ps1 -ProgramName $Program `
+        .\build_remote.ps1 -ProgramName $Program `
             -BuildServer "${{ secrets.BUILD_USER }}@${{ secrets.BUILD_SERVER }}" `
             -Environment "DV"
       shell: powershell
