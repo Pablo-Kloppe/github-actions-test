@@ -1,9 +1,10 @@
       ******************************************************************
-      *A.PD.S                                                          *
-      *     PROGRAMA ON-LINE TRANSACIONAL                              *
-      *     ASOCIADO A LA TRANSACCION A003                             *
-      *     GESTIONA LA CAPTURA Y MANTENIMIENTO DE LA TABLA DE BIENES  *
-      *     RAICES                                                     *
+      *A.PD.S
+      *     CAMBIO PARA GITHUB
+      *     PROGRAMA ON-LINE TRANSACIONAL
+      *     ASOCIADO A LA TRANSACCION A003
+      *     GESTIONA LA CAPTURA Y MANTENIMIENTO DE LA TABLA DE BIENES
+      *     RAICES
       *A.PD.E                                                          *
       *                                                                *
       *B.PD.S                                                          *
