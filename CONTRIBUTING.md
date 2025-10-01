@@ -1,20 +1,20 @@
-# Contributing to github-actions-test
+# Contributing Guidelines
 
-Thank you for considering contributing to this project!
+Thank you for your interest in contributing!
 
 ## How to Contribute
 - Fork the repository and create your branch from `main`.
-- Make your changes with clear, descriptive commit messages.
-- Ensure your code follows the project's style and passes CI checks.
+- Make your changes with clear commit messages.
+- Ensure your code passes CI checks.
 - Open a Pull Request (PR) and describe your changes.
-- Mark the PR as a draft if it's not ready for review.
 
-## Code of Conduct
-Please be respectful and considerate in all interactions.
+## Code Style
+- Follow the existing code style and structure.
+- Add comments where necessary.
 
 ## Reporting Issues
-- Use the Issues tab to report bugs or suggest features.
+- Use the Issues tab to report bugs or request features.
 - Provide as much detail as possible.
 
----
-Happy coding!
+## Questions
+For questions, open an issue or contact the maintainers.

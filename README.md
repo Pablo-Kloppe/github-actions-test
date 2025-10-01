@@ -4,15 +4,21 @@ Repo para probar GitHub Actions
 
 ## Quickstart
 
-1. Clone the repository:
+1. Clona este repositorio:
    ```sh
-   git clone https://github.com/your-username/github-actions-test.git
+   git clone https://github.com/tu-usuario/github-actions-test.git
    cd github-actions-test
    ```
-2. Make your changes in a new branch:
+2. Realiza tus cambios y haz commit:
    ```sh
-   git checkout -b my-feature-branch
+   git checkout -b nombre-de-tu-rama
+   # Haz tus cambios
+   git add .
+   git commit -m "Descripción clara del cambio"
+   git push origin nombre-de-tu-rama
    ```
-3. Push your branch and open a Pull Request.
+3. Abre un Pull Request en GitHub.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+## Requisitos
+- Tener instalado Git.
+- Seguir las [CONTRIBUTING.md](./CONTRIBUTING.md).
