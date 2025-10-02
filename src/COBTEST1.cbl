@@ -1,4 +1,4 @@
-       IDENTIFICATION DIVISION.
+IDENTIFICATION DIVISION.
        PROGRAM-ID. COBTEST1.
 
        ENVIRONMENT DIVISION.
@@ -29,7 +29,7 @@
            *> Obtener fecha actual
            MOVE FUNCTION CURRENT-DATE TO WS-DATETIME
 
-           DISPLAY "== COBTEST1 =="
+           DISPLAY "== COBTEST1 - agent smoke test =="
            DISPLAY "Enter your name: " WITH NO ADVANCING
            ACCEPT WS-NAME
 
