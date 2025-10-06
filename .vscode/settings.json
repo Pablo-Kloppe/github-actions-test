@@ -1,0 +1,4 @@
+{
+  "editor.formatOnSave": false,
+  "[cobol]": { "editor.formatOnSave": false }
+}
